@@ -80,7 +80,7 @@ apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
 | Domínio | gostoudosite.com.br (usado em `canonical` e `og:image`) |
 | O que faz | Landing pages para pequenos negócios de Maringá, PR |
 | WhatsApp | (44) 98809-4010 |
-| Portfólio | Os 16 sites desta série, servidos em `gostoudosite.com.br/<pasta>/` (e também no GitHub Pages, em `joabegalvao.github.io/<repositório>/`) |
+| Portfólio | 50 sites feitos, segundo o cliente. 16 deles estão nesta página, servidos em `gostoudosite.com.br/<pasta>/` (e também no GitHub Pages, em `joabegalvao.github.io/<repositório>/`); os demais ainda não foram incluídos |
 
 Não há telefone fixo, endereço, Instagram, preços, prazos ou avaliações: nada
 disso foi informado, e a página não inventa.
@@ -91,7 +91,7 @@ disso foi informado, e a página não inventa.
 | --- | --- |
 | Proposta de valor | A pergunta do nome vira o argumento: "Gostou do site? O próximo pode ser o seu." A prova é o próprio portfólio, aberto para clicar |
 | Principal objeção | "Vai ser mais um site de modelo pronto, igual aos outros" |
-| Resposta | 16 sites lado a lado, nenhum parecido com o outro, cada um com link ao vivo |
+| Resposta | Uma seleção de 16 sites lado a lado, nenhum parecido com o outro, cada um com link ao vivo |
 | Conversão prioritária | WhatsApp, com uma mensagem geral e uma por site ("Gostei do site da X e quero um parecido") |
 | Sem formulário | O contato é só pelo WhatsApp, e a página diz isso como vantagem |
 
@@ -115,8 +115,8 @@ só o esmaecimento das pontas), sem efeitos de vidro, sem emojis como ícones.
 | Ordem | Seção | Âncora | Conteúdo |
 | --- | --- | --- | --- |
 | 1 | Cabeçalho | | Logo (versão clara), navegação e CTA "Quero um site". Fixo no topo |
-| 2 | Hero | `#inicio` | "Gostou do site? O próximo pode ser o seu.", dois botões, a parede de sites e três fatos (16 sites, 1 identidade por cliente, 0 formulários) |
-| 3 | Sites feitos | `#sites` | Os 16 sites, com moldura de navegador, celular, segmento, uma frase, "Ver site" e "Quero um assim" |
+| 2 | Hero | `#inicio` | "Gostou do site? O próximo pode ser o seu.", dois botões, a parede de sites e três fatos (50 sites feitos, 1 identidade por cliente, 0 formulários) |
+| 3 | Sites feitos | `#sites` | "Cinquenta negócios, cinquenta sites diferentes" e uma seleção de 16, com moldura de navegador, celular, segmento, uma frase, "Ver site" e "Quero um assim" |
 | 4 | O que vem no site | `#entrega` | Sete itens que todos os sites da série têm |
 | 5 | Como funciona | `#como-funciona` | Três passos pelo WhatsApp: briefing, aprovação, ajustes e publicação |
 | 6 | Para quem | | Os 13 segmentos já atendidos |
@@ -142,7 +142,7 @@ tools/render-compartilhamento.js monta a imagem de compartilhamento pelo Chromiu
 materiais-de-origem/             logo original e capturas (só na pasta local, fora do git)
 ```
 
-## Os 16 sites
+## Os 16 sites publicados nesta página
 
 | Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
 | --- | --- | --- | --- |
@@ -181,7 +181,7 @@ resultado comercial.
 5. Se quiser o site na parede do hero, acrescente um `<li class="wall__item">`
    nas duas cópias da fileira escolhida (cada fileira é duplicada para o
    movimento ser contínuo).
-6. Atualize os números: "16" no hero, "Cinquenta" no título da seção e a
+6. Se o total de sites feitos mudar, atualize "50" no hero, "Cinquenta" no título da seção e a `description` no `<head>`; a contagem de cards é independente. no título da seção e a
    contagem no teste.
 
 ### Logo
@@ -254,8 +254,10 @@ clareado), porque o azul puro não alcança contraste suficiente para texto.
 
 ## Decisões de conteúdo
 
-- Os fatos do hero são verificáveis: 16 sites publicados, cada um com
-  identidade própria, nenhum formulário na página.
+- O número de 50 sites feitos foi informado pelo cliente (01/10/2026); a
+  página mostra uma seleção de 16, e diz que é uma seleção. Os outros dois
+  fatos do hero são verificáveis: identidade própria por cliente e nenhum
+  formulário na página.
 - Nenhum número de clientes, prazo, preço ou resultado. "Rápido" refere-se ao
   carregamento da página, medido nos testes.
 - A lista "O que vem no site" descreve só o que todos os 15 sites têm.
@@ -301,7 +303,7 @@ número responde no WhatsApp.
 | Versão inicial da página | todos |
 | Sites dos clientes publicados em `gostoudosite.com.br/<pasta>/` pelo Dockerfile; links do portfólio apontam para eles | `Dockerfile`, `nginx.conf`, `sites.txt`, `index.html` |
 | Area 51 Burger acrescentado: 16 sites | `sites.txt`, `index.html`, `tools/capture-sites.js`, `assets/img` |
-| Título da seção "Sites feitos" trocado para "Cinquenta negócios, cinquenta sites diferentes", a pedido do cliente; o número não corresponde aos cards publicados (16) | `index.html` |
+| Título da seção "Sites feitos" trocado para "Cinquenta negócios, cinquenta sites diferentes"; o cliente informou que são 50 sites feitos, dos quais 16 estão na página. Fato do hero e descrição ajustados; a página diz que mostra uma seleção | `index.html` |
 
 ## Créditos e licenças
 
