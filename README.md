@@ -28,6 +28,25 @@ materiais-de-origem/
   sites/   30 capturas dos 15 sites publicados (desktop 1440 x 1000 e celular 780 x 1560), feitas por tools/capture-sites.js
 ```
 
+## Repositório
+
+| Item | Valor |
+| --- | --- |
+| Endereço | `git@github.com:joabegalvao/gostoudosite.git` |
+| Página | https://github.com/joabegalvao/gostoudosite |
+| Visibilidade | pública (conferida em 01/10/2026) |
+| Branch | `main` |
+
+O repositório guarda só o que o site precisa para funcionar e ser mantido:
+`index.html`, `assets/`, `tools/`, `README.md` e `.gitignore`.
+
+```bash
+git clone git@github.com:joabegalvao/gostoudosite.git
+```
+
+Um clone novo abre e publica o site normalmente. Só não roda os scripts de
+imagens, que dependem da pasta `materiais-de-origem/`.
+
 ## Dados
 
 | Dado | Valor |
