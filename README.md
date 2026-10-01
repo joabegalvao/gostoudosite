@@ -1,4 +1,4 @@
-# Gostou do site? | gostoudosite.com
+# Gostou do site? | gostoudosite.com.br
 
 Página única, estática, em HTML, CSS e JavaScript puro. Não há etapa de build
 nem dependências de execução: basta servir a pasta. É a vitrine dos sites
@@ -57,14 +57,14 @@ O repositório traz um `Dockerfile` (Nginx servindo os arquivos estáticos) e um
 3. **Origem (Source):** GitHub, repositório `joabegalvao/gostoudosite`, branch
    `main`. O repositório é público; não precisa de token.
 4. **Build:** `Dockerfile` (caminho `./Dockerfile`).
-5. **Domínios:** adicione `gostoudosite.com` e `www.gostoudosite.com`, porta
+5. **Domínios:** adicione `gostoudosite.com.br` e `www.gostoudosite.com.br`, porta
    do container `80`, HTTPS ligado (o EasyPanel emite o certificado Let's
    Encrypt sozinho, depois que o DNS apontar).
 6. **Deploy.** A cada `git push` na `main`, basta clicar em Deploy de novo (ou
    ligar o deploy automático nas configurações do serviço, com o webhook que
    ele mostra).
 
-DNS, no registrador do domínio: um registro **A** para `gostoudosite.com`
+DNS, no registrador do domínio: um registro **A** para `gostoudosite.com.br`
 apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
 
 ## Dados
@@ -72,7 +72,7 @@ apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
 | Dado | Valor |
 | --- | --- |
 | Nome | Gostou do site? |
-| Domínio | gostoudosite.com (usado em `canonical` e `og:image`) |
+| Domínio | gostoudosite.com.br (usado em `canonical` e `og:image`) |
 | O que faz | Landing pages para pequenos negócios de Maringá, PR |
 | WhatsApp | (44) 98809-4010 |
 | Portfólio | Os 15 sites desta série, publicados no GitHub Pages em `joabegalvao.github.io/<repositório>/` |
@@ -203,7 +203,7 @@ Mensagens de WhatsApp:
 
 | Onde | Mensagem |
 | --- | --- |
-| Cabeçalho, hero, "O que vem no site", chamada final, rodapé e botão flutuante | Olá! Vi o gostoudosite.com e quero um site para o meu negócio. |
+| Cabeçalho, hero, "O que vem no site", chamada final, rodapé e botão flutuante | Olá! Vi o gostoudosite.com.br e quero um site para o meu negócio. |
 | "Quero um assim", em cada card | Olá! Gostei do site da [nome] e quero um parecido para o meu negócio. |
 
 Para gerar as imagens:
@@ -295,7 +295,7 @@ número responde no WhatsApp.
 
 ## Pendências
 
-- **Publicar no domínio gostoudosite.com.** `canonical` e `og:image` já
+- **Publicar no domínio gostoudosite.com.br.** `canonical` e `og:image` já
   apontam para ele. Se o site for publicado em outro endereço antes, ajuste
   as duas tags no `<head>`.
 - Logo em vetor (SVG), se existir, para substituir a versão recortada do PNG.
