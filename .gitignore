@@ -1,0 +1,15 @@
+# Materiais de origem (ficam só na pasta local): logo original e as capturas
+# dos sites em tamanho cheio. As imagens usadas pelo site estão em assets/img.
+/materiais-de-origem/
+
+# Metadados do Windows/WSL
+*:Zone.Identifier
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
