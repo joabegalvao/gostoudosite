@@ -49,8 +49,13 @@ imagens, que dependem da pasta `materiais-de-origem/`.
 
 ## Publicação no EasyPanel
 
-O repositório traz um `Dockerfile` (Nginx servindo os arquivos estáticos) e um
-`nginx.conf` com gzip e cache. No EasyPanel:
+O repositório traz um `Dockerfile` em duas etapas e um `nginx.conf` com gzip
+e cache. Na primeira etapa, a imagem **clona os 15 sites dos clientes a
+partir do GitHub**, um por pasta, conforme a lista em `sites.txt`; na segunda,
+o Nginx serve este site na raiz e cada cliente em `gostoudosite.com.br/<pasta>/`
+(por exemplo, `gostoudosite.com.br/fialho-barbearia/`). Nada dos clientes é
+copiado para este repositório: cada Deploy publica a versão mais nova de cada
+um. No EasyPanel:
 
 1. **Projetos > Criar projeto**, nome `gostoudosite`.
 2. Dentro do projeto, **Criar serviço > App**.
@@ -75,7 +80,7 @@ apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
 | Domínio | gostoudosite.com.br (usado em `canonical` e `og:image`) |
 | O que faz | Landing pages para pequenos negócios de Maringá, PR |
 | WhatsApp | (44) 98809-4010 |
-| Portfólio | Os 15 sites desta série, publicados no GitHub Pages em `joabegalvao.github.io/<repositório>/` |
+| Portfólio | Os 15 sites desta série, servidos em `gostoudosite.com.br/<pasta>/` (e também no GitHub Pages, em `joabegalvao.github.io/<repositório>/`) |
 
 Não há telefone fixo, endereço, Instagram, preços, prazos ou avaliações: nada
 disso foi informado, e a página não inventa.
@@ -125,6 +130,7 @@ em todas as telas.
 
 ```
 Dockerfile, nginx.conf           publicação com Nginx (EasyPanel, Docker)
+sites.txt                        lista pasta -> repositório dos sites dos clientes, lida pelo Dockerfile
 index.html                       conteúdo e SEO
 assets/css/styles.css            estilos (tokens de cor e tipografia no topo)
 assets/js/main.js                menu e revelação na rolagem
@@ -138,23 +144,23 @@ materiais-de-origem/             logo original e capturas (só na pasta local, f
 
 ## Os 15 sites
 
-| Site | Segmento | Endereço |
-| --- | --- | --- |
-| Fialho Barbearia | Barbearia | https://joabegalvao.github.io/fialho_barbearia/ |
-| Viva Baby | Loja de bebê | https://joabegalvao.github.io/viva-baby/ |
-| Amigos Auto Peças | Autopeças | https://joabegalvao.github.io/amigos-autopecas/ |
-| Nanda Bella Beauty Clinic | Esmaltação em gel | https://joabegalvao.github.io/nanda-bella/ |
-| Geral Peças | Autopeças | https://joabegalvao.github.io/geral-pecas/ |
-| Bacana Moda Feminina | Moda feminina | https://joabegalvao.github.io/bacana_moda_feminina/ |
-| Labuka Restaurante | Restaurante | https://joabegalvao.github.io/labuka/ |
-| Ótica Visão | Ótica | https://joabegalvao.github.io/otica-visao/ |
-| Vieira Fauna Shopping | Pet shop | https://joabegalvao.github.io/vieira-fauna/ |
-| Relojoaria Omega | Relojoaria | https://joabegalvao.github.io/relojoaria_omega/ |
-| Modelle | Moda feminina | https://joabegalvao.github.io/modelle/ |
-| Angel Cappucho | Piercing e tattoo | https://joabegalvao.github.io/angel-cappucho/ |
-| Studio Ratier | Nail designer | https://joabegalvao.github.io/studio-ratier/ |
-| Posto Tacs | Posto de combustível | https://joabegalvao.github.io/posto-tacs/ |
-| Armazém da Ju Essências | Essências e artesanato | https://joabegalvao.github.io/armazem_da_ju/ |
+| Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
+| --- | --- | --- | --- |
+| Fialho Barbearia | Barbearia | `/fialho-barbearia/` | `joabegalvao/fialho_barbearia` |
+| Viva Baby | Loja de bebê | `/viva-baby/` | `joabegalvao/viva-baby` |
+| Amigos Auto Peças | Autopeças | `/amigos-autopecas/` | `joabegalvao/amigos-autopecas` |
+| Nanda Bella Beauty Clinic | Esmaltação em gel | `/nanda-bella/` | `joabegalvao/nanda-bella` |
+| Geral Peças | Autopeças | `/geral-pecas/` | `joabegalvao/geral-pecas` |
+| Bacana Moda Feminina | Moda feminina | `/bacana-moda-feminina/` | `joabegalvao/bacana_moda_feminina` |
+| Labuka Restaurante | Restaurante | `/labuka/` | `joabegalvao/labuka` |
+| Ótica Visão | Ótica | `/otica-visao/` | `joabegalvao/otica-visao` |
+| Vieira Fauna Shopping | Pet shop | `/vieira-fauna/` | `joabegalvao/vieira-fauna` |
+| Relojoaria Omega | Relojoaria | `/relojoaria-omega/` | `joabegalvao/relojoaria_omega` |
+| Modelle | Moda feminina | `/modelle/` | `joabegalvao/modelle` |
+| Angel Cappucho | Piercing e tattoo | `/angel-cappucho/` | `joabegalvao/angel-cappucho` |
+| Studio Ratier | Nail designer | `/studio-ratier/` | `joabegalvao/studio-ratier` |
+| Posto Tacs | Posto de combustível | `/posto-tacs/` | `joabegalvao/posto-tacs` |
+| Armazém da Ju Essências | Essências e artesanato | `/armazem-da-ju/` | `joabegalvao/armazem_da_ju` |
 
 A ordem na página alterna sites escuros e claros, para a grade ter ritmo. As
 frases de cada card descrevem o que a página do cliente tem; nenhuma cita
@@ -162,17 +168,19 @@ resultado comercial.
 
 ### Como adicionar um site novo
 
-1. Acrescente o nome do repositório à lista `sites` em
+1. Acrescente uma linha `pasta  repositório` em `sites.txt`. É isso que
+   publica o site em `gostoudosite.com.br/<pasta>/` no próximo Deploy.
+2. Acrescente o nome do repositório à lista `sites` em
    `tools/capture-sites.js` e rode `node tools/capture-sites.js` (captura
    só o que falta se você apagar as outras capturas, ou tudo de novo).
-2. Rode `python3 tools/optimize-images.py` para gerar as miniaturas.
-3. No `index.html`, copie um bloco `<li class="work">` na seção "SITES
-   FEITOS", troque nome, segmento, frase, endereço e os nomes dos arquivos, e
-   ajuste a mensagem do link "Quero um assim".
-4. Se quiser o site na parede do hero, acrescente um `<li class="wall__item">`
+3. Rode `python3 tools/optimize-images.py` para gerar as miniaturas.
+4. No `index.html`, copie um bloco `<li class="work">` na seção "SITES
+   FEITOS", troque nome, segmento, frase, a pasta nos dois links e os nomes
+   dos arquivos, e ajuste a mensagem do link "Quero um assim".
+5. Se quiser o site na parede do hero, acrescente um `<li class="wall__item">`
    nas duas cópias da fileira escolhida (cada fileira é duplicada para o
    movimento ser contínuo).
-5. Atualize os números: "15" no hero, "Quinze" no título da seção e a
+6. Atualize os números: "15" no hero, "Quinze" no título da seção e a
    contagem no teste.
 
 ### Logo
@@ -246,8 +254,9 @@ clareado), porque o azul puro não alcança contraste suficiente para texto.
   carregamento da página, medido nos testes.
 - A lista "O que vem no site" descreve só o que todos os 15 sites têm.
 - "Como funciona" descreve o processo pelo WhatsApp sem prometer prazo.
-- Os links dos cards abrem os sites no GitHub Pages. Quando um cliente
-  publicar o site no próprio domínio, troque o endereço no card.
+- Os links dos cards abrem os sites em `gostoudosite.com.br/<pasta>/`, para
+  o cliente ver o site no domínio da agência. Quando um cliente publicar o
+  site no próprio domínio, troque o endereço no card, se quiser.
 - Sem avaliações: nenhuma foi fornecida.
 - Sem formulário, de propósito; a página apresenta isso como escolha.
 
@@ -263,9 +272,9 @@ Executados em 01/10/2026, em Chromium automatizado (Playwright).
 - 38 verificações automáticas aprovadas: menu no celular (toque, Esc, toque
   fora, foco), âncoras, botão flutuante de WhatsApp, imagens sem ampliação
   acima do tamanho real, revelação na rolagem, link de pular para o conteúdo,
-  foco visível, destino e atributos de todos os links (30 links para os 15
-  sites, 21 de WhatsApp com 16 mensagens diferentes, nenhum destino fora de
-  wa.me e joabegalvao.github.io), hierarquia de títulos e atributos das
+  foco visível, destino e atributos de todos os links (30 links para as 15
+  pastas dos sites, 21 de WhatsApp com 16 mensagens diferentes, nenhum destino
+  externo fora de wa.me), hierarquia de títulos e atributos das
   imagens, sem travessões, emojis ou textos de exemplo.
 - Página utilizável sem JavaScript.
 - Animações desligadas quando o sistema pede movimento reduzido (a parede
@@ -284,6 +293,7 @@ número responde no WhatsApp.
 | Ajuste | Arquivos |
 | --- | --- |
 | Versão inicial da página | todos |
+| Sites dos clientes publicados em `gostoudosite.com.br/<pasta>/` pelo Dockerfile; links do portfólio apontam para eles | `Dockerfile`, `nginx.conf`, `sites.txt`, `index.html` |
 
 ## Créditos e licenças
 
