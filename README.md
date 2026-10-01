@@ -47,6 +47,26 @@ git clone git@github.com:joabegalvao/gostoudosite.git
 Um clone novo abre e publica o site normalmente. Só não roda os scripts de
 imagens, que dependem da pasta `materiais-de-origem/`.
 
+## Publicação no EasyPanel
+
+O repositório traz um `Dockerfile` (Nginx servindo os arquivos estáticos) e um
+`nginx.conf` com gzip e cache. No EasyPanel:
+
+1. **Projetos > Criar projeto**, nome `gostoudosite`.
+2. Dentro do projeto, **Criar serviço > App**.
+3. **Origem (Source):** GitHub, repositório `joabegalvao/gostoudosite`, branch
+   `main`. O repositório é público; não precisa de token.
+4. **Build:** `Dockerfile` (caminho `./Dockerfile`).
+5. **Domínios:** adicione `gostoudosite.com` e `www.gostoudosite.com`, porta
+   do container `80`, HTTPS ligado (o EasyPanel emite o certificado Let's
+   Encrypt sozinho, depois que o DNS apontar).
+6. **Deploy.** A cada `git push` na `main`, basta clicar em Deploy de novo (ou
+   ligar o deploy automático nas configurações do serviço, com o webhook que
+   ele mostra).
+
+DNS, no registrador do domínio: um registro **A** para `gostoudosite.com`
+apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
+
 ## Dados
 
 | Dado | Valor |
@@ -104,6 +124,7 @@ em todas as telas.
 ## Estrutura de arquivos
 
 ```
+Dockerfile, nginx.conf           publicação com Nginx (EasyPanel, Docker)
 index.html                       conteúdo e SEO
 assets/css/styles.css            estilos (tokens de cor e tipografia no topo)
 assets/js/main.js                menu e revelação na rolagem
