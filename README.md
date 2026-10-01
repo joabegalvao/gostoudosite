@@ -181,7 +181,7 @@ resultado comercial.
 5. Se quiser o site na parede do hero, acrescente um `<li class="wall__item">`
    nas duas cópias da fileira escolhida (cada fileira é duplicada para o
    movimento ser contínuo).
-6. Atualize os números: "16" no hero, "Dezesseis" no título da seção e a
+6. Atualize os números: "16" no hero, "Cinquenta" no título da seção e a
    contagem no teste.
 
 ### Logo
@@ -301,6 +301,7 @@ número responde no WhatsApp.
 | Versão inicial da página | todos |
 | Sites dos clientes publicados em `gostoudosite.com.br/<pasta>/` pelo Dockerfile; links do portfólio apontam para eles | `Dockerfile`, `nginx.conf`, `sites.txt`, `index.html` |
 | Area 51 Burger acrescentado: 16 sites | `sites.txt`, `index.html`, `tools/capture-sites.js`, `assets/img` |
+| Título da seção "Sites feitos" trocado para "Cinquenta negócios, cinquenta sites diferentes", a pedido do cliente; o número não corresponde aos cards publicados (16) | `index.html` |
 
 ## Créditos e licenças
 
