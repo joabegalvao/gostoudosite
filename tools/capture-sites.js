@@ -4,7 +4,7 @@
 // Uso (na raiz do projeto): node tools/capture-sites.js
 // Requer Node e Playwright com Chromium (variáveis PLAYWRIGHT_MODULE e CHROMIUM_PATH, se preciso).
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const sites = ['bacana_moda_feminina','fialho_barbearia','armazem_da_ju','otica-visao','posto-tacs','labuka','angel-cappucho','studio-ratier','amigos-autopecas','viva-baby','relojoaria_omega','vieira-fauna','nanda-bella','modelle','geral-pecas'];
+const sites = ['bacana_moda_feminina','fialho_barbearia','armazem_da_ju','otica-visao','posto-tacs','labuka','angel-cappucho','studio-ratier','amigos-autopecas','viva-baby','relojoaria_omega','vieira-fauna','nanda-bella','modelle','geral-pecas','area51-burguer'];
 // decode só das imagens que estão na tela; as lazy fora dela nunca carregam e travariam o decode()
 const settle = async (p) => {
   await p.evaluate(() => document.fonts.ready);

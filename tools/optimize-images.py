@@ -95,7 +95,7 @@ def build_shots() -> None:
             widths = (720, 1080)
             # versão pequena e leve para a parede do hero (carrega sem lazy)
             wall = resize_to_width(im, 480).crop((0, 0, 480, 333))
-            wall.save(OUT / f"wall-{name}-480.webp", "WEBP", quality=72, method=6)
+            wall.save(OUT / f"wall-{name}-480.webp", "WEBP", quality=62, method=6)
         for w in widths:
             o = resize_to_width(im, w)
             o.save(OUT / f"site-{name}-{w}.webp", "WEBP", quality=80, method=6)
