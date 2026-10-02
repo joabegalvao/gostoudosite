@@ -295,6 +295,16 @@ strong {
   box-shadow: 0 12px 28px rgba(7, 108, 253, 0.36);
 }
 
+.btn--navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn--navy:hover {
+  background: var(--navy-800);
+  transform: translateY(-1px);
+}
+
 .btn--ghost {
   border-color: var(--navy-line);
   color: var(--white);
@@ -704,6 +714,104 @@ strong {
   display: grid;
   gap: 40px 28px;
   margin-top: clamp(40px, 5vw, 64px);
+}
+
+/* "Ver todos" embaixo da seleção da página inicial */
+.works__more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: clamp(40px, 5vw, 56px);
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.works__more-note {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+/* Página "todos os sites": busca, contagem e carregar mais */
+.search {
+  display: grid;
+  gap: 10px;
+  margin-top: clamp(28px, 4vw, 40px);
+  max-width: 560px;
+}
+
+.search__label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.search__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search__field .icon {
+  position: absolute;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.search__input {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 16px 12px 48px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.0625rem;
+}
+
+.search__input:focus {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-color: var(--blue);
+}
+
+.search__status {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.all__empty {
+  margin-top: 40px;
+  padding: 40px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.all__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
+.all__more[hidden] {
+  display: none;
+}
+
+.all__list {
+  margin-top: 32px;
+  display: grid;
+  gap: 8px;
+}
+
+.all__list a {
+  color: var(--ink);
 }
 
 .work__preview {

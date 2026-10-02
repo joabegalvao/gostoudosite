@@ -152,10 +152,11 @@ tools/render-compartilhamento.js monta a imagem de compartilhamento pelo Chromiu
 materiais-de-origem/             logo original e capturas (só na pasta local, fora do git)
 ```
 
-## Os 17 sites publicados nesta página
+## Os 18 sites publicados
 
 | Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
 | --- | --- | --- | --- |
+| Firula Bar | Bar e restaurante | `/firulabar/` | `joabegalvao/firulabar` |
 | Mec Bella | Moda feminina | `/mec-bella/` | `joabegalvao/mec-bella` |
 | Area 51 Burger | Hamburgueria | `/area51-burguer/` | `joabegalvao/area51-burguer` |
 | Fialho Barbearia | Barbearia | `/fialho-barbearia/` | `joabegalvao/fialho_barbearia` |
@@ -186,14 +187,32 @@ resultado comercial.
    `tools/capture-sites.js` e rode `node tools/capture-sites.js` (captura
    só o que falta se você apagar as outras capturas, ou tudo de novo).
 3. Rode `python3 tools/optimize-images.py` para gerar as miniaturas.
-4. No `index.html`, copie um bloco `<li class="work">` na seção "SITES
-   FEITOS", troque nome, segmento, frase, a pasta nos dois links e os nomes
-   dos arquivos, e ajuste a mensagem do link "Quero um assim".
-5. Se quiser o site na parede do hero, acrescente um `<li class="wall__item">`
+4. Acrescente o site **no começo** de `assets/data/sites.json` (a lista vai
+   do mais recente ao mais antigo): `pasta`, `imagem` (nome base dos
+   arquivos `site-<imagem>-*`), `segmento`, `nome`, `texto`, `alt` e
+   `artigo` ("da" ou "do", usado em "Gostei do site da/do [nome]"). É essa
+   lista que a página `todos.html` mostra, com busca e "carregar mais".
+5. No `index.html`, a seção "SITES FEITOS" mostra só os **dez mais
+   recentes**: copie um bloco `<li class="work">` para o começo da lista,
+   troque nome, segmento, frase, a pasta nos dois links, os nomes dos
+   arquivos e a mensagem do "Quero um assim", e remova o último card. Só
+   os dois primeiros carregam sem `loading="lazy"`.
+6. Se quiser o site na parede do hero, acrescente um `<li class="wall__item">`
    nas duas cópias da fileira escolhida (cada fileira é duplicada para o
    movimento ser contínuo).
-6. Se o total de sites feitos mudar, atualize "50" no hero, "Cinquenta" no título da seção e a `description` no `<head>`; a contagem de cards é independente. no título da seção e a
-   contagem no teste.
+7. Se o total de sites feitos mudar, atualize "50" no hero, "Cinquenta" no
+   título da seção e a `description` no `<head>`; a contagem de cards é
+   independente.
+
+### Página "todos os sites" (`todos.html`)
+
+Mesmo cabeçalho e rodapé da principal. Lê `assets/data/sites.json` e desenha
+os cards em lotes de 8: botão "Carregar mais" e, com `IntersectionObserver`,
+o próximo lote entra sozinho ao chegar no fim. O campo de busca filtra por
+nome, segmento e frase, ignorando acentos e maiúsculas, com contagem em
+`aria-live`. Sem JavaScript, a página mostra a lista completa de links dentro
+do `<noscript>`. O Nginx serve `todos.html` e o `sites.json` sem o selo do
+showroom e sem cache (`location =` próprios no `nginx.conf`).
 
 ### Logo
 
@@ -211,9 +230,9 @@ muda, só a cor das partes escuras.
 | O que mudar | Onde |
 | --- | --- |
 | Textos | `index.html` (seções comentadas) |
-| Número do WhatsApp | `index.html`: procure por `wa.me/` (23 ocorrências: 6 gerais e 17 por site). O texto vem depois de `?text=`, codificado |
+| Número do WhatsApp | `index.html`: procure por `wa.me/` (16 ocorrências: 6 gerais e 10 por site); `assets/js/todos.js` (constante `WA`); `todos.html` (estado vazio). O texto vem depois de `?text=`, codificado |
 | Cores e fontes | `assets/css/styles.css`, bloco `:root` |
-| Sites do portfólio | veja "Como adicionar um site novo" |
+| Sites do portfólio | veja "Como adicionar um site novo" (`sites.json` para a lista completa, `index.html` para os dez da página inicial) |
 | Itens de "O que vem no site" | `index.html`, lista `checklist` |
 | Passos | `index.html`, lista `steps` |
 | Segmentos | `index.html`, lista `segments__list` |
@@ -244,8 +263,9 @@ variáveis `PLAYWRIGHT_MODULE` e `CHROMIUM_PATH`.
 
 ### Cache do navegador
 
-Os arquivos de estilo e script são chamados com versão: `styles.css?v=1` e
-`main.js?v=1`. Ao alterar um deles, aumente o número no `index.html`.
+Os arquivos de estilo e script são chamados com versão: `styles.css?v=1`,
+`main.js?v=1` e `todos.js?v=1`. Ao alterar um deles, aumente o número no
+`index.html` e no `todos.html`.
 
 ## Identidade visual
 

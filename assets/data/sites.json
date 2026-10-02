@@ -1,0 +1,164 @@
+[
+ {
+  "pasta": "firulabar",
+  "imagem": "firulabar",
+  "segmento": "Bar e restaurante",
+  "nome": "Firula Bar",
+  "texto": "Pub à noite: preto, laranja do logo, varal de luzes e avaliações em bolacha de chope.",
+  "alt": "Primeira tela do site do Firula Bar.",
+  "artigo": "do"
+ },
+ {
+  "pasta": "mec-bella",
+  "imagem": "mec-bella",
+  "segmento": "Moda feminina",
+  "nome": "Mec Bella",
+  "texto": "Editorial de revista: marfim, serifa grande e as fotos da loja em Cianorte.",
+  "alt": "Primeira tela do site da Mec Bella.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "area51-burguer",
+  "imagem": "area51-burguer",
+  "segmento": "Hamburgueria",
+  "nome": "Area 51 Burger",
+  "texto": "Neon, polaroids sobre madeira e cupons de caixa, com o prêmio e o horário da casa.",
+  "alt": "Primeira tela do site da Area 51 Burger.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "fialho-barbearia",
+  "imagem": "fialho_barbearia",
+  "segmento": "Barbearia",
+  "nome": "Fialho Barbearia",
+  "texto": "Corte e barba com hora marcada, agenda online e Clube Fialho.",
+  "alt": "Primeira tela do site da Fialho Barbearia.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "viva-baby",
+  "imagem": "viva-baby",
+  "segmento": "Loja de bebê",
+  "nome": "Viva Baby",
+  "texto": "Quartos, enxoval e brinquedos, com ilustrações feitas para a página.",
+  "alt": "Primeira tela do site da Viva Baby.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "amigos-autopecas",
+  "imagem": "amigos-autopecas",
+  "segmento": "Autopeças",
+  "nome": "Amigos Auto Peças",
+  "texto": "Do carro ao caminhão, com peças ilustradas por código.",
+  "alt": "Primeira tela do site da Amigos Auto Peças.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "nanda-bella",
+  "imagem": "nanda-bella",
+  "segmento": "Esmaltação em gel",
+  "nome": "Nanda Bella Beauty Clinic",
+  "texto": "Unhas, cílios e massagem, com o logo vetorizado a partir de 150 px.",
+  "alt": "Primeira tela do site da Nanda Bella Beauty Clinic.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "geral-pecas",
+  "imagem": "geral-pecas",
+  "segmento": "Autopeças",
+  "nome": "Geral Peças",
+  "texto": "Peça certa pelo WhatsApp, com mensagem por tipo de veículo.",
+  "alt": "Primeira tela do site da Geral Peças.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "bacana-moda-feminina",
+  "imagem": "bacana_moda_feminina",
+  "segmento": "Moda feminina",
+  "nome": "Bacana Moda Feminina",
+  "texto": "O look inteiro resolvido, da roupa ao acessório.",
+  "alt": "Primeira tela do site da Bacana Moda Feminina.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "labuka",
+  "imagem": "labuka",
+  "segmento": "Restaurante",
+  "nome": "Labuka Restaurante",
+  "texto": "Buffet com churrasco na brasa, três endereços e delivery.",
+  "alt": "Primeira tela do site da Labuka Restaurante.",
+  "artigo": "do"
+ },
+ {
+  "pasta": "otica-visao",
+  "imagem": "otica-visao",
+  "segmento": "Ótica",
+  "nome": "Ótica Visão",
+  "texto": "Armações ilustradas por código e 40 anos de ótica.",
+  "alt": "Primeira tela do site da Ótica Visão.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "vieira-fauna",
+  "imagem": "vieira-fauna",
+  "segmento": "Pet shop",
+  "nome": "Vieira Fauna Shopping",
+  "texto": "Guia de campo: na água e em terra, do aquário ao banho e tosa.",
+  "alt": "Primeira tela do site da Vieira Fauna Shopping.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "relojoaria-omega",
+  "imagem": "relojoaria_omega",
+  "segmento": "Relojoaria",
+  "nome": "Relojoaria Omega",
+  "texto": "Tradição há mais de 70 anos, em grafite e dourado.",
+  "alt": "Primeira tela do site da Relojoaria Omega.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "modelle",
+  "imagem": "modelle",
+  "segmento": "Moda feminina",
+  "nome": "Modelle",
+  "texto": "Vitrine de boutique: looks para o dia a dia e ocasiões especiais.",
+  "alt": "Primeira tela do site da Modelle.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "angel-cappucho",
+  "imagem": "angel-cappucho",
+  "segmento": "Piercing e tattoo",
+  "nome": "Angel Cappucho",
+  "texto": "Direção gótica, na medida do estúdio.",
+  "alt": "Primeira tela do site da Angel Cappucho.",
+  "artigo": "da"
+ },
+ {
+  "pasta": "studio-ratier",
+  "imagem": "studio-ratier",
+  "segmento": "Nail designer",
+  "nome": "Studio Ratier",
+  "texto": "Sem logo recebido: identidade criada do zero.",
+  "alt": "Primeira tela do site da Studio Ratier.",
+  "artigo": "do"
+ },
+ {
+  "pasta": "posto-tacs",
+  "imagem": "posto-tacs",
+  "segmento": "Posto de combustível",
+  "nome": "Posto Tacs",
+  "texto": "Aqui vale a parada: 24 horas, na Praça José de Bonifácio.",
+  "alt": "Primeira tela do site da Posto Tacs.",
+  "artigo": "do"
+ },
+ {
+  "pasta": "armazem-da-ju",
+  "imagem": "armazem_da_ju",
+  "segmento": "Essências e artesanato",
+  "nome": "Armazém da Ju Essências",
+  "texto": "Essências e materiais para o seu artesanato.",
+  "alt": "Primeira tela do site da Armazém da Ju Essências.",
+  "artigo": "do"
+ }
+]
