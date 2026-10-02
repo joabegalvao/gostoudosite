@@ -2,7 +2,8 @@
    Os sites dos clientes são servidos em gostoudosite.com.br/<pasta>/ só como
    vitrine. O Nginx (nginx.conf) insere este script antes do </body> de cada
    página dessas pastas, e ele desenha um selo fixo no canto inferior esquerdo
-   com a marca do Gostou do site?, ligando para a página principal.
+   com a marca do Gostou do site?, ligando para a página principal, e uma
+   marca d'água grande e quase transparente no centro da tela.
 
    Nada é alterado nos repositórios dos clientes: no domínio próprio de cada
    um o selo não existe. O canto inferior direito fica livre para o botão de
@@ -25,7 +26,12 @@
     '@media (max-width:479px){#gostoudosite-selo{height:44px;padding:0 12px 0 10px;left:10px;bottom:10px}',
     '#gostoudosite-selo img{height:28px}#gostoudosite-selo span{font-size:11px}#gostoudosite-selo b{font-size:12px}}',
     '@media (prefers-reduced-motion:reduce){#gostoudosite-selo{transition:none}#gostoudosite-selo:hover{transform:none}}',
-    '@media print{#gostoudosite-selo{display:none}}'
+    '@media print{#gostoudosite-selo,#gostoudosite-marca{display:none}}',
+    /* marca d'água: a silhueta branca do logo, centralizada e quase
+       transparente, em modo "difference" para aparecer escura em fundo claro
+       e clara em fundo escuro; não recebe cliques */
+    '#gostoudosite-marca{position:fixed;left:50%;top:50%;z-index:2147482000;width:min(72vw,900px);height:auto;',
+    'transform:translate(-50%,-50%);opacity:.13;mix-blend-mode:difference;pointer-events:none;user-select:none}'
   ].join('');
 
   var style = document.createElement('style');
@@ -50,5 +56,16 @@
 
   a.appendChild(img);
   a.appendChild(text);
+
+  var marca = document.createElement('img');
+  marca.id = 'gostoudosite-marca';
+  marca.src = '/assets/showroom/marca-dagua.webp';
+  marca.alt = '';
+  marca.width = 960;
+  marca.height = 500;
+  marca.setAttribute('aria-hidden', 'true');
+  marca.decoding = 'async';
+
+  document.body.appendChild(marca);
   document.body.appendChild(a);
 })();
