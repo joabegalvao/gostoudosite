@@ -14,15 +14,18 @@ const settle = async (p) => {
   ]));
   await p.waitForTimeout(800);
 };
+// se a captura vier do showroom (gostoudosite.com.br/<pasta>/), o selo do
+// Gostou do site? não deve aparecer nas miniaturas
+const hideBadge = (p) => p.addStyleTag({ content: '#gostoudosite-selo{display:none !important}' });
 (async () => {
   const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
   for (const s of sites) {
     const url = `https://joabegalvao.github.io/${s}/`; // os sites publicados
     const p = await b.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
-    await p.goto(url, { waitUntil: 'load', timeout: 45000 }); await settle(p);
+    await p.goto(url, { waitUntil: 'load', timeout: 45000 }); await hideBadge(p); await settle(p);
     await p.screenshot({ path: `materiais-de-origem/sites/${s}.png` }); await p.close();
     const m = await b.newPage({ viewport: { width: 390, height: 780 }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
-    await m.goto(url, { waitUntil: 'load', timeout: 45000 }); await settle(m);
+    await m.goto(url, { waitUntil: 'load', timeout: 45000 }); await hideBadge(m); await settle(m);
     await m.screenshot({ path: `materiais-de-origem/sites/${s}-m.png` }); await m.close();
     console.log(s);
   }

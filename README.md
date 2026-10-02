@@ -72,6 +72,14 @@ um. No EasyPanel:
 DNS, no registrador do domínio: um registro **A** para `gostoudosite.com.br`
 apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
 
+## Selo do showroom nos sites dos clientes
+
+Os sites em `gostoudosite.com.br/<pasta>/` são vitrine. Cada página deles recebe um selo fixo no canto inferior esquerdo ("Site feito por / Peça o seu", com a marca clara sobre o marinho), ligando para a página principal. O canto direito fica livre para o botão de WhatsApp que todos os sites têm.
+
+Como funciona: o `nginx.conf` insere `<script src="/assets/showroom/selo.js" defer>` antes do `</body>` de toda página fora da raiz (`sub_filter`, no `location /`); o `index.html` do portfólio tem um `location = /index.html` próprio, sem o filtro. O `assets/showroom/selo.js` cria o selo com estilo próprio (id `gostoudosite-selo`, cores fixas, fonte do sistema), sem depender do CSS de cada site. Nada muda nos repositórios dos clientes: no domínio próprio de cada um o selo não existe, e as miniaturas do portfólio são capturadas sem ele (`tools/capture-sites.js` esconde o id antes do print). Para desligar, basta remover as duas linhas de `sub_filter` do `nginx.conf`.
+
+Testado em 02/10/2026 com a imagem Docker construída localmente: raiz sem selo, `/firulabar/`, `/mec-bella/` e `/fialho-barbearia/` com o script inserido uma vez, gzip mantido.
+
 ## Dados
 
 | Dado | Valor |
