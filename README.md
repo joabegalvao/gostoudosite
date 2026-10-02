@@ -152,10 +152,11 @@ tools/render-compartilhamento.js monta a imagem de compartilhamento pelo Chromiu
 materiais-de-origem/             logo original e capturas (só na pasta local, fora do git)
 ```
 
-## Os 18 sites publicados
+## Os 19 sites publicados
 
 | Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
 | --- | --- | --- | --- |
+| Sahtén | Restaurante árabe (Córdoba, Argentina) | `/sahten/` | `joabegalvao/sahten` |
 | Firula Bar | Bar e restaurante | `/firulabar/` | `joabegalvao/firulabar` |
 | Mec Bella | Moda feminina | `/mec-bella/` | `joabegalvao/mec-bella` |
 | Area 51 Burger | Hamburgueria | `/area51-burguer/` | `joabegalvao/area51-burguer` |
