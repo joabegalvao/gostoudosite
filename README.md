@@ -25,7 +25,7 @@ As imagens que o site usa já estão prontas em `assets/img`.
 ```
 materiais-de-origem/
   logo/    gostou_do_site_logo.png (1570 x 1002, com xadrez de transparência pintado no fundo)
-  sites/   32 capturas dos 16 sites publicados (desktop 1440 x 1000 e celular 780 x 1560), feitas por tools/capture-sites.js
+  sites/   34 capturas dos 17 sites publicados (desktop 1440 x 1000 e celular 780 x 1560), feitas por tools/capture-sites.js
 ```
 
 ## Repositório
@@ -50,7 +50,7 @@ imagens, que dependem da pasta `materiais-de-origem/`.
 ## Publicação no EasyPanel
 
 O repositório traz um `Dockerfile` em duas etapas e um `nginx.conf` com gzip
-e cache. Na primeira etapa, a imagem **clona os 16 sites dos clientes a
+e cache. Na primeira etapa, a imagem **clona os 17 sites dos clientes a
 partir do GitHub**, um por pasta, conforme a lista em `sites.txt`; na segunda,
 o Nginx serve este site na raiz e cada cliente em `gostoudosite.com.br/<pasta>/`
 (por exemplo, `gostoudosite.com.br/fialho-barbearia/`). Nada dos clientes é
@@ -80,7 +80,7 @@ apontando para o IP do servidor, e um **CNAME** (ou outro A) para `www`.
 | Domínio | gostoudosite.com.br (usado em `canonical` e `og:image`) |
 | O que faz | Landing pages para pequenos negócios de Maringá, PR |
 | WhatsApp | (44) 98809-4010 |
-| Portfólio | 50 sites feitos, segundo o cliente. 16 deles estão nesta página, servidos em `gostoudosite.com.br/<pasta>/` (e também no GitHub Pages, em `joabegalvao.github.io/<repositório>/`); os demais ainda não foram incluídos |
+| Portfólio | 50 sites feitos, segundo o cliente. 17 deles estão nesta página, servidos em `gostoudosite.com.br/<pasta>/` (e também no GitHub Pages, em `joabegalvao.github.io/<repositório>/`); os demais ainda não foram incluídos |
 
 Não há telefone fixo, endereço, Instagram, preços, prazos ou avaliações: nada
 disso foi informado, e a página não inventa.
@@ -91,7 +91,7 @@ disso foi informado, e a página não inventa.
 | --- | --- |
 | Proposta de valor | A pergunta do nome vira o argumento: "Gostou do site? O próximo pode ser o seu." A prova é o próprio portfólio, aberto para clicar |
 | Principal objeção | "Vai ser mais um site de modelo pronto, igual aos outros" |
-| Resposta | Uma seleção de 16 sites lado a lado, nenhum parecido com o outro, cada um com link ao vivo |
+| Resposta | Uma seleção de 17 sites lado a lado, nenhum parecido com o outro, cada um com link ao vivo |
 | Conversão prioritária | WhatsApp, com uma mensagem geral e uma por site ("Gostei do site da X e quero um parecido") |
 | Sem formulário | O contato é só pelo WhatsApp, e a página diz isso como vantagem |
 
@@ -116,7 +116,7 @@ só o esmaecimento das pontas), sem efeitos de vidro, sem emojis como ícones.
 | --- | --- | --- | --- |
 | 1 | Cabeçalho | | Logo (versão clara), navegação e CTA "Quero um site". Fixo no topo |
 | 2 | Hero | `#inicio` | "Gostou do site? O próximo pode ser o seu.", dois botões, a parede de sites e três fatos (50 sites feitos, 1 identidade por cliente, 0 formulários) |
-| 3 | Sites feitos | `#sites` | "Cinquenta negócios, cinquenta sites diferentes" e uma seleção de 16, com moldura de navegador, celular, segmento, uma frase, "Ver site" e "Quero um assim" |
+| 3 | Sites feitos | `#sites` | "Cinquenta negócios, cinquenta sites diferentes" e uma seleção de 17, com moldura de navegador, celular, segmento, uma frase, "Ver site" e "Quero um assim" |
 | 4 | O que vem no site | `#entrega` | Sete itens que todos os sites da série têm |
 | 5 | Como funciona | `#como-funciona` | Três passos pelo WhatsApp: briefing, aprovação, ajustes e publicação |
 | 6 | Para quem | | Os 13 segmentos já atendidos |
@@ -136,16 +136,17 @@ assets/css/styles.css            estilos (tokens de cor e tipografia no topo)
 assets/js/main.js                menu e revelação na rolagem
 assets/img/                      imagens otimizadas (geradas pelos scripts)
 assets/fonts/                    Outfit e Inter (arquivos locais)
-tools/capture-sites.js           captura a primeira tela dos 16 sites publicados (Playwright)
+tools/capture-sites.js           captura a primeira tela dos 17 sites publicados (Playwright)
 tools/optimize-images.py         logo sem fundo, ícones e miniaturas a partir das capturas
 tools/render-compartilhamento.js monta a imagem de compartilhamento pelo Chromium
 materiais-de-origem/             logo original e capturas (só na pasta local, fora do git)
 ```
 
-## Os 16 sites publicados nesta página
+## Os 17 sites publicados nesta página
 
 | Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
 | --- | --- | --- | --- |
+| Mec Bella | Moda feminina | `/mec-bella/` | `joabegalvao/mec-bella` |
 | Area 51 Burger | Hamburgueria | `/area51-burguer/` | `joabegalvao/area51-burguer` |
 | Fialho Barbearia | Barbearia | `/fialho-barbearia/` | `joabegalvao/fialho_barbearia` |
 | Viva Baby | Loja de bebê | `/viva-baby/` | `joabegalvao/viva-baby` |
@@ -200,7 +201,7 @@ muda, só a cor das partes escuras.
 | O que mudar | Onde |
 | --- | --- |
 | Textos | `index.html` (seções comentadas) |
-| Número do WhatsApp | `index.html`: procure por `wa.me/` (22 ocorrências: 6 gerais e 16 por site). O texto vem depois de `?text=`, codificado |
+| Número do WhatsApp | `index.html`: procure por `wa.me/` (23 ocorrências: 6 gerais e 17 por site). O texto vem depois de `?text=`, codificado |
 | Cores e fontes | `assets/css/styles.css`, bloco `:root` |
 | Sites do portfólio | veja "Como adicionar um site novo" |
 | Itens de "O que vem no site" | `index.html`, lista `checklist` |
@@ -255,7 +256,7 @@ clareado), porque o azul puro não alcança contraste suficiente para texto.
 ## Decisões de conteúdo
 
 - O número de 50 sites feitos foi informado pelo cliente (01/10/2026); a
-  página mostra uma seleção de 16, e diz que é uma seleção. Os outros dois
+  página mostra uma seleção de 17, e diz que é uma seleção. Os outros dois
   fatos do hero são verificáveis: identidade própria por cliente e nenhum
   formulário na página.
 - Nenhum número de clientes, prazo, preço ou resultado. "Rápido" refere-se ao
@@ -303,6 +304,7 @@ número responde no WhatsApp.
 | Versão inicial da página | todos |
 | Sites dos clientes publicados em `gostoudosite.com.br/<pasta>/` pelo Dockerfile; links do portfólio apontam para eles | `Dockerfile`, `nginx.conf`, `sites.txt`, `index.html` |
 | Area 51 Burger acrescentado: 16 sites | `sites.txt`, `index.html`, `tools/capture-sites.js`, `assets/img` |
+| Mec Bella acrescentada: 17 sites | `sites.txt`, `index.html`, `tools/capture-sites.js`, `assets/img` |
 | Título da seção "Sites feitos" trocado para "Cinquenta negócios, cinquenta sites diferentes"; o cliente informou que são 50 sites feitos, dos quais 16 estão na página. Fato do hero e descrição ajustados; a página diz que mostra uma seleção | `index.html` |
 
 ## Créditos e licenças
