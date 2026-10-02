@@ -16,3 +16,4 @@ posto-tacs             posto-tacs
 armazem-da-ju          armazem_da_ju
 area51-burguer         area51-burguer
 mec-bella              mec-bella
+firulabar              firulabar
