@@ -16,7 +16,7 @@ RUN grep -v '^#' sites.txt | while read -r pasta repo; do \
 # Etapa 2: Nginx servindo tudo como arquivos estáticos. Nada é compilado.
 FROM nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html todos.html /usr/share/nginx/html/
+COPY index.html todos.html sitemap.xml robots.txt /usr/share/nginx/html/
 COPY assets /usr/share/nginx/html/assets
 COPY --from=sites /sites /usr/share/nginx/html/
 EXPOSE 80

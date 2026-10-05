@@ -206,6 +206,33 @@ resultado comercial.
 7. Se o total de sites feitos mudar, atualize "50" no hero, "Cinquenta" no
    título da seção e a `description` no `<head>`; a contagem de cards é
    independente.
+8. Rode `python3 tools/gerar-sitemap.py` para atualizar o `sitemap.xml`
+   (ele lista a página inicial, `todos.html` e a pasta de cada site).
+
+### Google: sitemap, robots e Search Console
+
+`sitemap.xml` e `robots.txt` são gerados por `tools/gerar-sitemap.py` a partir
+do `sites.json` e vão para a raiz do domínio pelo Dockerfile. Para o Google
+encontrar e indexar as páginas dos clientes em `gostoudosite.com.br/<pasta>/`:
+
+1. **HTTPS válido**: em 05/10/2026 o domínio respondia em HTTPS com o
+   certificado autoassinado do EasyPanel ("CN=Easypanel"). Navegadores mostram
+   aviso de segurança e o Google não indexa direito. No EasyPanel, em
+   Domains do serviço, ativar HTTPS (Let's Encrypt) para gostoudosite.com.br
+   e www; a Cloudflare precisa continuar "DNS only" (nuvem cinza) para o
+   certificado ser emitido.
+2. **Search Console**: cadastrar a propriedade `gostoudosite.com.br`
+   (verificação por registro DNS TXT na Cloudflare), enviar
+   `https://gostoudosite.com.br/sitemap.xml` e pedir indexação das URLs
+   principais.
+3. **Links de fora**: o que mais acelera é cada cliente colocar a URL da sua
+   pasta no campo "Site" do Perfil da Empresa no Google e na bio do Instagram.
+   Sem isso, uma pasta em um domínio novo demora semanas para aparecer e
+   dificilmente passa o próprio perfil do Google Maps da empresa na busca.
+
+Quando um cliente tiver domínio próprio, a página dele deve sair da pasta
+(ou receber `rel="canonical"` para o domínio novo), para não concorrer com
+ele no Google.
 
 ### Página "todos os sites" (`todos.html`)
 
