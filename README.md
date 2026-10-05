@@ -152,10 +152,12 @@ tools/render-compartilhamento.js monta a imagem de compartilhamento pelo Chromiu
 materiais-de-origem/             logo original e capturas (só na pasta local, fora do git)
 ```
 
-## Os 19 sites publicados
+## Os 21 sites publicados
 
 | Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
 | --- | --- | --- | --- |
+| Mandacaru Café | Café e restaurante | `/mandacarucafe/` | `joabegalvao/mandacarucafe` |
+| Gabriela Bueno | Hair colorist | `/gabrielabueno/` | `joabegalvao/gabrielabueno` |
 | Sahtén | Restaurante árabe (Córdoba, Argentina) | `/sahten/` | `joabegalvao/sahten` |
 | Firula Bar | Bar e restaurante | `/firulabar/` | `joabegalvao/firulabar` |
 | Mec Bella | Moda feminina | `/mec-bella/` | `joabegalvao/mec-bella` |

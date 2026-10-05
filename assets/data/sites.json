@@ -1,5 +1,23 @@
 [
  {
+  "pasta": "mandacarucafe",
+  "imagem": "mandacarucafe",
+  "segmento": "Café e restaurante",
+  "nome": "Mandacaru Café",
+  "texto": "As cores da casa: amarelo, vinho e verde, janela redonda no hero e o dia em quatro momentos, do café à pizza.",
+  "alt": "Primeira tela do site do Mandacaru Café.",
+  "artigo": "do"
+ },
+ {
+  "pasta": "gabrielabueno",
+  "imagem": "gabrielabueno",
+  "segmento": "Hair colorist",
+  "nome": "Gabriela Bueno",
+  "texto": "Editorial de beleza em marfim e dourado, com o hero em página dupla e molduras finas nas fotos.",
+  "alt": "Primeira tela do site da Gabriela Bueno Hair Colorist.",
+  "artigo": "da"
+ },
+ {
   "pasta": "sahten",
   "imagem": "sahten",
   "segmento": "Restaurante árabe",
