@@ -31,7 +31,7 @@
        transparente, em modo "difference" para aparecer escura em fundo claro
        e clara em fundo escuro; não recebe cliques */
     '#gostoudosite-marca{position:fixed;left:50%;top:50%;z-index:2147482000;width:min(72vw,900px);height:auto;',
-    'transform:translate(-50%,-50%);opacity:.13;mix-blend-mode:difference;pointer-events:none;user-select:none}'
+    'transform:translate(-50%,-50%);opacity:.10;mix-blend-mode:difference;pointer-events:none;user-select:none}'
   ].join('');
 
   var style = document.createElement('style');
