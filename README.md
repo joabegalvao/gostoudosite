@@ -152,10 +152,11 @@ tools/render-compartilhamento.js monta a imagem de compartilhamento pelo Chromiu
 materiais-de-origem/             logo original e capturas (só na pasta local, fora do git)
 ```
 
-## Os 21 sites publicados
+## Os 22 sites publicados
 
 | Site | Segmento | Pasta em gostoudosite.com.br | Repositório |
 | --- | --- | --- | --- |
+| Helo Cosméticos | Loja de cosméticos | `/helocosmeticos/` | `joabegalvao/helocosmeticos` |
 | Mandacaru Café | Café e restaurante | `/mandacarucafe/` | `joabegalvao/mandacarucafe` |
 | Gabriela Bueno | Hair colorist | `/gabrielabueno/` | `joabegalvao/gabrielabueno` |
 | Sahtén | Restaurante árabe (Córdoba, Argentina) | `/sahten/` | `joabegalvao/sahten` |
